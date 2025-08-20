@@ -14,6 +14,12 @@ return RectorConfig::configure()
         __DIR__.'/routes',
         __DIR__.'/tests',
     ])
+    ->withSkip([
+        __DIR__ . '/bootstrap/cache/packages.php',
+        __DIR__ . '/bootstrap/cache/services.php',
+        __DIR__ . '/config/sanctum.php',
+        __DIR__ . '/routes/api.php',
+    ])
     ->withPreparedSets(
         deadCode: true,
         codeQuality: true,
